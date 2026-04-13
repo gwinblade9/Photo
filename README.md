@@ -34,7 +34,7 @@
 - Отметка о прочтении в админке
 
 ### 🔧 Админ-панель
-- Защищённый вход (admin@photographer.com / admin123)
+- Защищённый вход (cucumber@novgu.com / memes123)
 - CRUD операции для фотографий
 - Управление блогом
 - Просмотр и управление сообщениями
@@ -94,7 +94,7 @@ text
 
 1. **Клонируйте репозиторий**
 ```bash
-git clone https://github.com/your-username/photo-portfolio.git
+git clone https://github.com/your-username/Photo.git
 cd photo-portfolio
 Установите зависимости
 
