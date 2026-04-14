@@ -3,7 +3,6 @@ import { render, screen, fireEvent, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import ContactForm from '../../components/Contact/ContactForm'
 
-// Мок для useLocalStorage
 vi.mock('../../hooks/useLocalStorage', () => ({
   useLocalStorage: (key, defaultValue) => {
     const mockSetMessages = vi.fn()
@@ -22,7 +21,6 @@ describe('ContactForm', () => {
   it('должен отображать все поля формы', () => {
     render(<ContactForm />)
     
-    // getByLabelText теперь работает, так как есть htmlFor/id
     expect(screen.getByLabelText('Имя *')).toBeInTheDocument()
     expect(screen.getByLabelText('Почта *')).toBeInTheDocument()
     expect(screen.getByLabelText('Телефон')).toBeInTheDocument()
@@ -74,7 +72,6 @@ describe('ContactForm', () => {
     const user = userEvent.setup()
     render(<ContactForm />)
     
-    // Заполняем форму
     await user.type(screen.getByLabelText('Имя *'), 'Тестовый пользователь')
     await user.type(screen.getByLabelText('Почта *'), 'test@example.com')
     await user.type(screen.getByLabelText('Сообщение *'), 'Тестовое сообщение')
