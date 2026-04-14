@@ -20,7 +20,6 @@ const BlogManager = () => {
     published: false
   })
 
-  // Конвертация файла в base64
   const fileToBase64 = (file) => {
     return new Promise((resolve, reject) => {
       const reader = new FileReader()
@@ -30,7 +29,7 @@ const BlogManager = () => {
     })
   }
 
-  // Загрузка изображения с компьютера
+  // загрузка изображения с компьютера
   const handleImageUpload = async (e) => {
     const file = e.target.files[0]
     if (!file) return
