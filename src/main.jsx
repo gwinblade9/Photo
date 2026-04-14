@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom/client'
 import App from './App'
 import './styles/globals.css'
 
-// Простой Error Boundary
 class ErrorBoundary extends React.Component {
   constructor(props) {
     super(props)
