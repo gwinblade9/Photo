@@ -1,10 +1,5 @@
 // src/utils/smoothScroll.js
 
-/**
- * Плавная прокрутка к элементу
- * @param {string} elementId - ID элемента (без #)
- * @param {number} offset - Смещение от верхней части (для fixed header)
- */
 export const smoothScrollTo = (elementId, offset = 80) => {
   const element = document.getElementById(elementId)
   if (!element) return
@@ -18,9 +13,6 @@ export const smoothScrollTo = (elementId, offset = 80) => {
   })
 }
 
-/**
- * Плавная прокрутка к верху страницы
- */
 export const scrollToTop = () => {
   window.scrollTo({
     top: 0,
@@ -28,11 +20,6 @@ export const scrollToTop = () => {
   })
 }
 
-/**
- * Плавная прокрутка к секции по селектору
- * @param {string} selector - CSS селектор (например, '#gallery', '.contact-form')
- * @param {number} offset - Смещение
- */
 export const smoothScrollToSelector = (selector, offset = 80) => {
   const element = document.querySelector(selector)
   if (!element) return
@@ -46,9 +33,6 @@ export const smoothScrollToSelector = (selector, offset = 80) => {
   })
 }
 
-/**
- * Обработчик для всех ссылок с data-smooth-scroll атрибутом
- */
 export const initSmoothScroll = () => {
   const links = document.querySelectorAll('[data-smooth-scroll]')
   
