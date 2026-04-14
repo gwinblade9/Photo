@@ -1,8 +1,5 @@
 // src/utils/imageLoader.js
 
-/**
- * Проверяет существование изображения
- */
 export const checkImageExists = (url) => {
   return new Promise((resolve) => {
     const img = new Image()
@@ -12,11 +9,6 @@ export const checkImageExists = (url) => {
   })
 }
 
-/**
- * Получает все локальные изображения из папки
- * @param {string} category - категория (wedding, portrait, nature)
- * @returns {Promise<Array>} массив с информацией об изображениях
- */
 export const scanLocalImages = async (category) => {
   // Список известных изображений (можно расширять вручную)
   const knownImages = {
@@ -50,9 +42,6 @@ export const scanLocalImages = async (category) => {
   return existingImages
 }
 
-/**
- * Создает объект фото из локального изображения
- */
 export const createPhotoFromLocal = (imagePath, category, index) => {
   const fileName = imagePath.split('/').pop()
   const title = fileName.replace(/\.[^/.]+$/, '').replace(/-/g, ' ')
