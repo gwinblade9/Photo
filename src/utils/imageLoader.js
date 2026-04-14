@@ -10,7 +10,7 @@ export const checkImageExists = (url) => {
 }
 
 export const scanLocalImages = async (category) => {
-  // Список известных изображений (можно расширять вручную)
+
   const knownImages = {
     wedding: [
       '/images/gallery/wedding/wedding-1.jpg',
