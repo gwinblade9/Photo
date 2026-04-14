@@ -3,7 +3,6 @@ import { render, screen } from '@testing-library/react'
 import { BrowserRouter } from 'react-router-dom'
 import PricingCards from '../../components/Services/PricingCards'
 
-// Мок useLocalStorage с реальными данными
 vi.mock('../../hooks/useLocalStorage', () => ({
   useLocalStorage: (key, defaultValue) => {
     if (key === 'services') {
@@ -84,7 +83,6 @@ describe('PricingCards', () => {
     expect(screen.getByText('100+ обработанных фото')).toBeInTheDocument()
     expect(screen.getByText('Коммерческая лицензия')).toBeInTheDocument()
     
-    // Для повторяющихся элементов используем getAllByText
     const onlineGalleries = screen.getAllByText('Онлайн-галерея')
     expect(onlineGalleries).toHaveLength(2) // В свадебной и портретной
   })
