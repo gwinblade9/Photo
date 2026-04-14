@@ -1,87 +1,91 @@
+// src/data/defaultData.js
+
+// Фото по умолчанию
 export const defaultPhotos = [
   {
     id: '1',
-    title: 'Mountain Serenity',
-    description: 'Capturing the peaceful morning light in the Alps',
+    title: 'Горная безмятежность',
+    description: 'Захват утреннего света в Альпах',
     category: 'nature',
-    tags: ['mountains', 'sunrise', 'landscape'],
+    tags: ['горы', 'рассвет', 'пейзаж'],
     imageUrl: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800',
     thumbnailUrl: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400',
     createdAt: '2024-01-15'
   },
   {
     id: '2',
-    title: 'Wedding Elegance',
-    description: 'Intimate moment between newlyweds',
+    title: 'Свадебная элегантность',
+    description: 'Интимный момент молодоженов',
     category: 'wedding',
-    tags: ['wedding', 'love', 'romance'],
+    tags: ['свадьба', 'любовь', 'романтика'],
     imageUrl: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=800',
     thumbnailUrl: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=400',
     createdAt: '2024-01-10'
   },
   {
     id: '3',
-    title: 'Urban Portrait',
-    description: 'Street photography in downtown',
+    title: 'Городской портрет',
+    description: 'Стрит-фотография в центре города',
     category: 'portrait',
-    tags: ['portrait', 'urban', 'street'],
+    tags: ['портрет', 'город', 'улица'],
     imageUrl: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800',
     thumbnailUrl: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400',
     createdAt: '2024-01-05'
   },
   {
     id: '4',
-    title: 'Forest Dreams',
-    description: 'Mystical forest atmosphere',
+    title: 'Лесные грёзы',
+    description: 'Таинственная атмосфера леса',
     category: 'nature',
-    tags: ['forest', 'mystical', 'green'],
+    tags: ['лес', 'мистика', 'зелень'],
     imageUrl: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800',
     thumbnailUrl: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400',
     createdAt: '2024-01-01'
   },
   {
     id: '5',
-    title: 'Beach Wedding',
-    description: 'Sunset ceremony by the ocean',
+    title: 'Пляжная свадьба',
+    description: 'Церемония на закате у океана',
     category: 'wedding',
-    tags: ['beach', 'sunset', 'wedding'],
+    tags: ['пляж', 'закат', 'свадьба'],
     imageUrl: 'https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=800',
     thumbnailUrl: 'https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=400',
     createdAt: '2023-12-28'
   },
   {
     id: '6',
-    title: 'Artistic Portrait',
-    description: 'Creative studio lighting',
+    title: 'Художественный портрет',
+    description: 'Креативный студийный свет',
     category: 'portrait',
-    tags: ['studio', 'artistic', 'portrait'],
+    tags: ['студия', 'арт', 'портрет'],
     imageUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800',
     thumbnailUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400',
     createdAt: '2023-12-20'
   }
 ]
 
+// Посты блога по умолчанию
 export const defaultBlogPosts = [
   {
     id: '1',
-    title: 'The Art of Wedding Photography',
-    slug: 'art-of-wedding-photography',
-    excerpt: 'Learn how to capture authentic moments on the biggest day of their lives...',
-    content: '<p>Wedding photography is about telling a story. Every couple has a unique love story, and it\'s our job to capture it authentically.</p><p>From the nervous excitement before the ceremony to the joyful tears during the speeches, these moments matter.</p><h2>Tips for natural wedding photos</h2><ul><li>Build rapport with the couple beforehand</li><li>Use natural light whenever possible</li><li>Capture candid moments, not just posed shots</li></ul>',
+    title: 'Искусство свадебной фотографии',
+    slug: 'iskusstvo-svadebnoi-fotografii',
+    excerpt: 'Как запечатлеть искренние моменты в самый важный день...',
+    content: '<p>Свадебная фотография — это искусство рассказывать истории. У каждой пары своя уникальная история любви, и наша задача — запечатлеть её искренне.</p><p>От волнения перед церемонией до радостных слёз во время тостов — эти моменты важны.</p><h2>Советы для естественных свадебных фото</h2><ul><li>Познакомьтесь с парой заранее</li><li>Используйте естественный свет</li><li>Снимайте искренние моменты, а не только постановочные кадры</li></ul>',
     featuredImage: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=800',
     published: true,
     views: 234,
     createdAt: '2024-01-15',
     comments: [
-      { id: 'c1', authorName: 'Sarah Johnson', content: 'Beautiful article! Very helpful tips.', createdAt: '2024-01-16' }
+      { id: 'c1', authorName: 'Анна', content: 'Прекрасная статья! Очень полезные советы.', createdAt: '2024-01-16' }
     ]
   },
   {
     id: '2',
-    title: 'Mastering Natural Light',
-    slug: 'mastering-natural-light',
-    excerpt: 'Understanding how to work with available light for stunning portraits...',
-    content: '<p>Natural light is the most beautiful and flattering light source for photography. Here\'s how to master it.</p><p>The golden hour — just after sunrise or before sunset — provides warm, directional light that creates depth and dimension.</p>',
+    title: 'Мастерство работы с естественным светом',
+    slug: 'masterstvo-estestvennogo-sveta',
+    excerpt: 'Понимание того, как работать с доступным освещением для потрясающих портретов...',
+    content: '<p>Естественный свет — самый красивый и лестный источник освещения для фотографии. Вот как им овладеть.</p><p>Золотой час — сразу после восхода или перед закатом — даёт тёплый направленный свет, создающий глубину и объём.</p>',
     featuredImage: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800',
     published: true,
     views: 156,
@@ -90,31 +94,36 @@ export const defaultBlogPosts = [
   }
 ]
 
+// Услуги по умолчанию (ЭКСПОРТ defaultServices)
 export const defaultServices = [
   {
     id: '1',
-    name: 'Wedding Photography',
+    name: 'Свадебная фотография',
     price: 3500,
-    description: 'Full-day coverage with digital gallery and print rights',
-    features: ['10 hours coverage', '500+ edited photos', 'Online gallery', 'Print rights', 'Engagement session'],
+    description: 'Полное сопровождение свадебного дня с цифровой галереей',
+    features: ['10 часов съёмки', '500+ обработанных фото', 'Онлайн-галерея', 'Права на печать', 'Love story сессия'],
     isActive: true
   },
   {
     id: '2',
-    name: 'Portrait Session',
+    name: 'Портретная сессия',
     price: 500,
-    description: 'Personal branding, family, or individual portraits',
-    features: ['2 hours session', '50+ edited photos', 'Online gallery', 'Print rights', 'Location choice'],
+    description: 'Персональная, семейная или имиджевая съёмка',
+    features: ['2 часа съёмки', '50+ обработанных фото', 'Онлайн-галерея', 'Права на печать', 'Выбор локации'],
     isActive: true
   },
   {
     id: '3',
-    name: 'Commercial',
+    name: 'Коммерческая съёмка',
     price: 1500,
-    description: 'Product, real estate, or corporate photography',
-    features: ['4 hours coverage', '100+ edited photos', 'Commercial license', 'Fast delivery', 'Props included'],
+    description: 'Предметная, интерьерная или корпоративная фотография',
+    features: ['4 часа съёмки', '100+ обработанных фото', 'Коммерческая лицензия', 'Быстрая обработка', 'Реквизит включён'],
     isActive: true
   }
 ]
 
+// Сообщения по умолчанию
 export const defaultMessages = []
+
+// Изображение об авторе
+export const aboutImage = 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400'
