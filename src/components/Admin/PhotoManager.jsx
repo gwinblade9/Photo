@@ -18,7 +18,6 @@ const PhotoManager = () => {
     thumbnailUrl: ''
   })
 
-  // Конвертация файла в base64
   const fileToBase64 = (file) => {
     return new Promise((resolve, reject) => {
       const reader = new FileReader()
@@ -28,7 +27,7 @@ const PhotoManager = () => {
     })
   }
 
-  // Загрузка изображения с компьютера
+  // загрузка изображения с компьютера
   const handleFileUpload = async (e) => {
     const file = e.target.files[0]
     if (!file) return
