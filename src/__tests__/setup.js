@@ -2,12 +2,12 @@ import { expect, afterEach, vi } from 'vitest'
 import { cleanup } from '@testing-library/react'
 import '@testing-library/jest-dom/vitest'
 
-// Очистка после каждого теста
+// очистка после каждого теста
 afterEach(() => {
   cleanup()
 })
 
-// Мок для IntersectionObserver (для framer-motion)
+// мок для IntersectionObserver (для framer-motion)
 global.IntersectionObserver = class IntersectionObserver {
   constructor(callback) {
     this.callback = callback
@@ -19,7 +19,7 @@ global.IntersectionObserver = class IntersectionObserver {
   disconnect() {}
 }
 
-// Мок для localStorage
+// мок для localStorage
 const localStorageMock = {
   getItem: vi.fn(),
   setItem: vi.fn(),
@@ -30,10 +30,10 @@ const localStorageMock = {
 }
 global.localStorage = localStorageMock
 
-// Мок для window.scrollTo
+// мок для window.scrollTo
 global.scrollTo = vi.fn()
 
-// Мок для matchMedia
+// мок для matchMedia
 Object.defineProperty(window, 'matchMedia', {
   writable: true,
   value: vi.fn().mockImplementation(query => ({
@@ -48,7 +48,7 @@ Object.defineProperty(window, 'matchMedia', {
   })),
 })
 
-// Мок для React Router
+// мок для React Router
 vi.mock('react-router-dom', async () => {
   const actual = await vi.importActual('react-router-dom')
   return {
