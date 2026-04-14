@@ -29,7 +29,7 @@ const createPhoto = async (req, res) => {
     const { title, description, category } = req.body;
     const filename = req.file.filename;
     
-    // Копируем как миниатюру (упрощённо)
+    // упрощеннаыя копия миниатюры
     const thumbPath = path.join(__dirname, '../../uploads/thumbnails', filename);
     fs.copyFileSync(req.file.path, thumbPath);
     
