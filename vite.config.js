@@ -16,8 +16,16 @@ export default defineConfig({
         manualChunks: {
           vendor: ['react', 'react-dom', 'react-router-dom'],
           animations: ['framer-motion']
-        }
+        },   
       }
     }
+  },
+    test: {
+    globals: true,
+    environment: 'jsdom',
+    setupFiles: './src/__tests__/setup.js',
+    include: ['src/__tests__/**/*.test.js', 'src/__tests__/**/*.test.jsx'],
+    css: true
+    }
   }
-})
+)
