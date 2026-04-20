@@ -76,11 +76,11 @@ const MessagesViewer = () => {
             <div className="mt-4 flex gap-3">
               {!msg.isRead && (
                 <button onClick={() => markAsRead(msg.id)} className="text-sm text-blue-600 hover:text-blue-800">
-                  {t('Mark as Read')}
+                  {t('Пометить прочитанным')}
                 </button>
               )}
               <button onClick={() => deleteMessage(msg.id)} className="text-sm text-red-600 hover:text-red-800">
-                {t('Delete')}
+                {t('Удалить')}
               </button>
             </div>
           </div>
