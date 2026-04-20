@@ -146,4 +146,4 @@ bash
 cd frontend
 npm run build
 
-# Готовые файлы в папке frontend/dist/
+
