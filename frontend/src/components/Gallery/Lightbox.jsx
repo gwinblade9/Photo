@@ -21,10 +21,27 @@ const Lightbox = ({ photos, currentIndex, onClose }) => {
   }, [photos.length, onClose])
 
   const handleDownload = () => {
-    const link = document.createElement('a')
-    link.href = currentPhoto.imageUrl
-    link.download = currentPhoto.title || 'photo'
-    link.click()
+    try {
+      // Создаём временную ссылку
+      const link = document.createElement('a')
+      link.href = currentPhoto.imageUrl
+      link.download = currentPhoto.title?.replace(/[^a-zа-яё0-9]/gi, '_') || 'photo'
+      link.target = '_blank'
+      link.rel = 'noopener noreferrer'
+      
+      // Добавляем в DOM, кликаем, удаляем
+      document.body.appendChild(link)
+      link.click()
+      
+      // Удаляем через небольшую задержку
+      setTimeout(() => {
+        document.body.removeChild(link)
+      }, 100)
+    } catch (error) {
+      console.error('Ошибка скачивания:', error)
+      // Альтернатива: открыть в новой вкладке
+      window.open(currentPhoto.imageUrl, '_blank')
+    }
   }
 
   if (!currentPhoto) return null
@@ -35,7 +52,7 @@ const Lightbox = ({ photos, currentIndex, onClose }) => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className="lightbox-overlay"
+        className="fixed inset-0 bg-black/95 z-[1000] flex items-center justify-center backdrop-blur-md"
         onClick={onClose}
       >
         <button 
@@ -63,7 +80,11 @@ const Lightbox = ({ photos, currentIndex, onClose }) => {
           <img 
             src={currentPhoto.imageUrl} 
             alt={currentPhoto.title}
-            className="lightbox-image"
+            className="max-h-[85vh] max-w-[90vw] object-contain"
+            onError={(e) => {
+              console.error('Ошибка загрузки изображения:', currentPhoto.imageUrl)
+              e.target.src = 'https://via.placeholder.com/800x600?text=Image+not+found'
+            }}
           />
           <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent text-white p-6 rounded-b-lg">
             <h3 className="text-2xl font-light mb-2">{currentPhoto.title}</h3>
