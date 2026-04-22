@@ -88,12 +88,12 @@ const ContactForm = () => {
         disabled={submitting}
         className="w-full px-6 py-4 bg-black dark:bg-white text-white dark:text-black hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors disabled:opacity-50 rounded-lg text-sm uppercase tracking-wider"
       >
-        {submitting ? 'Отправка...' : 'Send Message'}
+        {submitting ? 'Отправка...' : 'Отправить сообщение'}
       </button>
       
       {success && (
         <div className="bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 p-4 rounded-lg text-center animate-fade-in">
-          ✓ Message sent successfully! I'll get back to you soon.
+          ✓ Сообщение успешно отправлено! Я свяжусь с вами в ближайшее время.
         </div>
       )}
     </form>
