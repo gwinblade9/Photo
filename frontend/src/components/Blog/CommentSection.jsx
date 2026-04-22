@@ -39,7 +39,7 @@ const CommentSection = ({ postId, initialComments = [] }) => {
         <div>
           <input
             type="text"
-            placeholder="Your Name *"
+            placeholder="Ваше имя *"
             value={formData.authorName}
             onChange={(e) => setFormData({...formData, authorName: e.target.value})}
             className="w-full px-4 py-3 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-black dark:focus:ring-white focus:outline-none bg-white dark:bg-gray-800"
@@ -48,7 +48,7 @@ const CommentSection = ({ postId, initialComments = [] }) => {
         </div>
         <div>
           <textarea
-            placeholder="Your Comment *"
+            placeholder="Ваш комментарий *"
             value={formData.content}
             onChange={(e) => setFormData({...formData, content: e.target.value})}
             rows={4}
@@ -61,7 +61,7 @@ const CommentSection = ({ postId, initialComments = [] }) => {
           disabled={submitting}
           className="px-6 py-3 bg-black dark:bg-white text-white dark:text-black hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors disabled:opacity-50 rounded-lg"
         >
-          {submitting ? 'Posting...' : 'Post Comment'}
+          {submitting ? 'Отправка...' : 'Оставить комментарий'}
         </button>
       </form>
       
