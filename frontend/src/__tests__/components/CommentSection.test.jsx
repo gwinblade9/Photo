@@ -38,13 +38,12 @@ describe('CommentSection', () => {
     const user = userEvent.setup()
     render(<CommentSection postId="test-post" initialComments={[]} />)
     
-    const nameInput = screen.getByPlaceholderText('Your Name *')
-    const commentInput = screen.getByPlaceholderText('Your Comment *')
-    const submitButton = screen.getByText('Post Comment')
+    const nameInput = screen.getByPlaceholderText('Ваше имя *')
+    const commentInput = screen.getByPlaceholderText('Ваш комментарий *')
+    const submitButton = screen.getByText('Оставить комментарий')
     
     await user.type(nameInput, 'Тестовый пользователь')
     await user.type(commentInput, 'Это тестовый комментарий')
-    
     fireEvent.click(submitButton)
     
     await waitFor(() => {
@@ -56,8 +55,8 @@ describe('CommentSection', () => {
   it('должен показывать форму для комментария', () => {
     render(<CommentSection postId="test-post" initialComments={[]} />)
     
-    expect(screen.getByPlaceholderText('Your Name *')).toBeInTheDocument()
-    expect(screen.getByPlaceholderText('Your Comment *')).toBeInTheDocument()
-    expect(screen.getByText('Post Comment')).toBeInTheDocument()
+    expect(screen.getByPlaceholderText('Ваше имя *')).toBeInTheDocument()
+    expect(screen.getByPlaceholderText('Ваш комментарий *')).toBeInTheDocument()
+    expect(screen.getByText('Оставить комментарий')).toBeInTheDocument()
   })
 })
