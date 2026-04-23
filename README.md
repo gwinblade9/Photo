@@ -57,9 +57,9 @@ npm run dev
 Перейди по адресу http://localhost:3000
 
 Вход в админку
-Email: admin@photographer.com
+Email: cucumber@novgu.com
 
-Пароль: admin123
+Пароль: memes123
 
 Админка доступна по адресу: http://localhost:3000/admin
 
