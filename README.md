@@ -36,8 +36,8 @@
 ```bash
 cd backend
 npm install
-Создай папки для загрузок:
 
+Создай папки для загрузок:
 bash
 mkdir -p uploads/photos uploads/thumbnails data
 Запусти бэкенд:
@@ -92,7 +92,6 @@ Email: admin@photographer.com
 Нажми "Создать"
 
 Структура проекта
-text
 photo-portfolio/
 ├── backend/
 │   ├── src/
@@ -116,6 +115,7 @@ photo-portfolio/
     │   ├── styles/        # глобальные стили
     │   └── utils/         # переводы, плавный скролл
     └── package.json
+
 API эндпоинты (бэкенд)
 Метод	URL	Описание
 GET	/api/health	Проверка работы
