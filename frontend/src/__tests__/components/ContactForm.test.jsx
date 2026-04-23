@@ -22,21 +22,19 @@ describe('ContactForm', () => {
   it('должен отображать все поля формы', () => {
     render(<ContactForm />)
     
-    // getByLabelText теперь работает, так как есть htmlFor/id
     expect(screen.getByLabelText('Имя *')).toBeInTheDocument()
     expect(screen.getByLabelText('Почта *')).toBeInTheDocument()
     expect(screen.getByLabelText('Телефон')).toBeInTheDocument()
     expect(screen.getByLabelText('Сообщение *')).toBeInTheDocument()
-    expect(screen.getByRole('button', { name: 'Send Message' })).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'Отправить сообщение' })).toBeInTheDocument()
   })
 
   it('должен показывать ошибки при пустых обязательных полях', async () => {
     render(<ContactForm />)
     
-    const submitButton = screen.getByRole('button', { name: 'Send Message' })
+    const submitButton = screen.getByRole('button', { name: 'Отправить сообщение' })
     fireEvent.click(submitButton)
     
-    // Проверяем, что форма не отправилась (нет сообщения об успехе)
     await waitFor(() => {
       expect(screen.queryByText(/Message sent successfully/i)).not.toBeInTheDocument()
     })
@@ -56,17 +54,16 @@ describe('ContactForm', () => {
     const user = userEvent.setup()
     render(<ContactForm />)
     
-    // Заполняем форму используя getByLabelText
     await user.type(screen.getByLabelText('Имя *'), 'Тестовый пользователь')
     await user.type(screen.getByLabelText('Почта *'), 'test@example.com')
     await user.type(screen.getByLabelText('Телефон'), '+7 (999) 123-45-67')
     await user.type(screen.getByLabelText('Сообщение *'), 'Тестовое сообщение')
     
-    const submitButton = screen.getByRole('button', { name: 'Send Message' })
+    const submitButton = screen.getByRole('button', { name: 'Отправить сообщение' })
     fireEvent.click(submitButton)
     
     await waitFor(() => {
-      expect(screen.getByText(/Message sent successfully/i)).toBeInTheDocument()
+      expect(screen.getByText(/Сообщение успешно отправлено/i)).toBeInTheDocument()
     })
   })
 
@@ -74,12 +71,11 @@ describe('ContactForm', () => {
     const user = userEvent.setup()
     render(<ContactForm />)
     
-    // Заполняем форму
     await user.type(screen.getByLabelText('Имя *'), 'Тестовый пользователь')
     await user.type(screen.getByLabelText('Почта *'), 'test@example.com')
     await user.type(screen.getByLabelText('Сообщение *'), 'Тестовое сообщение')
     
-    const submitButton = screen.getByRole('button', { name: 'Send Message' })
+    const submitButton = screen.getByRole('button', { name: 'Отправить сообщение' })
     fireEvent.click(submitButton)
     
     await waitFor(() => {
